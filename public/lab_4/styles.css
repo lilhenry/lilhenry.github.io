@@ -48,7 +48,7 @@ body {
 
 .flex-inner {
   justify-content: space-between;
-  pading: 0 8px;
+  padding: 0 8px;
 }
 
 .flex-outer li input:not([type="checkbox"]),
