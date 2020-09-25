@@ -2,6 +2,10 @@ body {
   background-color: #ace3aa;
 }
 
+h1 {
+    margin: auto;
+}
+
 .flex-outer,
 .flex-inner {
   list-style-type: none;
