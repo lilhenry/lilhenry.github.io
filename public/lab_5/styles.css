@@ -2,6 +2,10 @@ body {
   background-color: #ace3aa;
 }
 
+button {
+  margin-right: 10px;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -72,7 +76,7 @@ body {
 }
 
 .flex-inner li {
-  width: 100px;
+  width: 95px;
 }
 
 .flex-inner {
