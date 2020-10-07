@@ -40,7 +40,9 @@
             </li>
             <li>
               <label for="message">Text Field</label>
-              <textarea rows="5" cols="33" name="message" id="message">This is some default message text.</textarea>
+              <textarea rows="5" cols="33" name="message" id="message">
+This is some default message text.</textarea
+              >
             </li>
             <li>
               <p class="checkbox-list-label">Age</p>
@@ -63,9 +65,45 @@
             <li>
               <button type="submit">SUBMIT FORM</button>
             </li>
+
+            <li>
+              <button type="button" name="activate" onclick="testFunction()">
+                Activate
+              </button>
+            </li>
           </ul>
         </form>
       </div>
     </div>
+    <script>
+      function testFunction() {
+
+        fetch('/api')
+        .then((response) => response.text())
+        .then((response) => {
+          console.log(response);
+
+          // replace h1 and title
+          const tenhead=document.querySelector('h1');
+          tenhead.innerHTML=response;
+          const tentitle=document.querySelector('title');
+          tentitle.innerHTML=response;
+        });
+        
+        // change page background color
+        document.querySelector("body").style.backgroundColor="#C5E7FF";
+
+        // add "margin: 0 auto;" to .flex-outer
+        document.querySelectorAll(".flex-outer").style.margin="0 auto";
+
+        // change "age" and age labels
+        //    to "fruits" and 3 fruit labels
+        //    document.querySelectorAll and
+        //    either a For loop or a .forEach function
+        const thirteenage=document.querySelector(".checkbox-list-label");
+        thirteenage.innerHTML=("Fruits");
+
+      }
+    </script>
   </body>
 </html>
