@@ -1,4 +1,9 @@
 // You may wish to find an effective randomizer function on MDN.
+function getRandom(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
 function range(int) {
   const arr = [];
