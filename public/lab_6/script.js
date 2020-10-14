@@ -1,4 +1,3 @@
-// You may wish to find an effective randomizer function on MDN.
 function getRandom(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -34,7 +33,32 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
+      // 10: get ten random countries from returned value list
+      //     use math.random
+      //     use range
+      //     use map
+
+      // 11: sort in reverse alphabetical order
+      //     use sort
+      //     use sort function provided
+
+      // 12: inject ordered list element
+      //     use JS
+      //     classname "flex-inner"
+      //     document.createElement
+      //     easier with jQuery append and prepend
+
+      // 13: inject list element
+      //     contains checkbox and label
+      //     for each country
+      //     country name visible
+      //     include country code as value for input
+      //     checkboxes have same name (key for form data)
+      //     labels attached using "for" and "id" attributes
+
+      // 14: on each click of button
+      //     replace checkbox list with a new one
+
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
