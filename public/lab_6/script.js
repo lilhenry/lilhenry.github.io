@@ -1,6 +1,8 @@
+// lab progress: 1, 2, 3, 4, 5, 6, 7, 8, 9 done
+
 function getRandom(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
+  const min1 = Math.ceil(min);
+  const max1 = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -34,20 +36,19 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // 10: get ten random countries from returned value list
-      //     use math.random
-      //     use range
-      //     use map
+      //  10
+      const ten = range(10);
+      const tencountries = ten.map((element) => countries[getRandom(0, 242)]);
 
-      // 11: sort in reverse alphabetical order
-      //     use sort
-      //     use sort function provided
+      // 11
+      const revorder = tencountries.sort((first, second) => sortFunction(second, first, 'name'));
 
-      // 12: inject ordered list element
-      //     use JS
-      //     classname "flex-inner"
-      //     document.createElement
-      //     easier with jQuery append and prepend
+      // 12
+      const oldol = document.querySelector('.flex-inner');
+      oldol.remove();
+      const newol = document.createElement('ol');
+      newol.setAttribute('class', 'flex-inner');
+      $(form).append(newol);
 
       // 13: inject list element
       //     contains checkbox and label
@@ -56,6 +57,9 @@ document.body.addEventListener('submit', async (e) => {
       //     include country code as value for input
       //     checkboxes have same name (key for form data)
       //     labels attached using "for" and "id" attributes
+      revorder.foreach((country) => {
+        
+      })
 
       // 14: on each click of button
       //     replace checkbox list with a new one
