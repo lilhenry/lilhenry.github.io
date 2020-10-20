@@ -1,5 +1,3 @@
-// lab progress: 1, 2, 3, 4, 5, 6, 7, 8, 9 done
-
 function getRandom(min, max) {
   const min1 = Math.ceil(min);
   const max1 = Math.floor(max);
