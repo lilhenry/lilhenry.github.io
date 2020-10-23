@@ -34,6 +34,7 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
+      console.log('before 10');
       //  10
       const ten = range(10);
       const tencountries = ten.map(() => {
@@ -41,17 +42,20 @@ document.body.addEventListener('submit', async (e) => {
         return fromServer[num];
       });
 
+      console.log('before 11');
       // 11
       const revorder = tencountries.sort((first, second) => sortFunction(second, first, 'name'));
 
+      console.log('before 12');
       // 12
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
       }
       const newol = document.createElement('ol');
       newol.className = 'flex-inner';
-      $(form).append(newol);
+      $(form).prepend(newol);
 
+      console.log('before 13');
       // 13: inject list element
       //     contains checkbox and label
       //     for each country
@@ -59,17 +63,18 @@ document.body.addEventListener('submit', async (e) => {
       //     include country code as value for input
       //     checkboxes have same name (key for form data)
       //     labels attached using "for" and "id" attributes
-      revorder.foreach((country, i) => {
+      revorder.forEach((country, i) => {
         const item = document.createElement('li');
         $(item).append('<input type="checkbox" value=${item.code} id=${item.code} />');
         $(item).append('<label for=${item.code}>${item.name}</label>');
-        $(newol).append(li);
+        $(newol).append(item);
       });
 
       // 14: on each click of button
       //     replace checkbox list with a new one
 
       console.log('fromServer', fromServer);
+      console.log('after fromserver is printed');
     })
     .catch((err) => console.log(err));
 });
