@@ -62,8 +62,8 @@ document.body.addEventListener('submit', async (e) => {
       //     labels attached using "for" and "id" attributes
       revorder.forEach((country, i) => {
         const item = document.createElement('li');
-        $(item).append('<input type="checkbox" value='+country.code+' id='+country.code+' />');
-        $(item).append('<label for='+country.code+'>'+country.name+'</label>');
+        $(item).append('<input type="checkbox" value=' +country.code+ ' id=' +country.code+ ' name="countries" />');
+        $(item).append('<label for=' +country.code+ '>' +country.name+ '</label>');
         $(newol).append(item);
       });
 
