@@ -53,22 +53,13 @@ document.body.addEventListener('submit', async (e) => {
       const formel = document.querySelector('form');
       formel.prepend(newol);
 
-      // 13: inject list element
-      //     contains checkbox and label
-      //     for each country
-      //     country name visible
-      //     include country code as value for input
-      //     checkboxes have same name (key for form data)
-      //     labels attached using "for" and "id" attributes
+      // 13
       revorder.forEach((country, i) => {
         const item = document.createElement('li');
         $(item).append('<input type="checkbox" value=' +country.code+ ' id=' +country.code+ ' name="countries" />');
         $(item).append('<label for=' +country.code+ '>' +country.name+ '</label>');
         $(newol).append(item);
       });
-
-      // 14: on each click of button
-      //     replace checkbox list with a new one
 
       console.log('fromServer', fromServer);
     })
