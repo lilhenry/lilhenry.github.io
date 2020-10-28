@@ -46,12 +46,13 @@ body {
 }
 
 .flex-outer button {
-  background-color: darkolivegreen;
-  color: white;
+  background-color: #C4C4BC;
+  color: #F0F0E9;
   padding: 6px 12px;
   border: none;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  font-weight: bold;
+  letter-spacing: 2px;
   border-radius: 3px;
   display: block;
   margin: 0 auto;
@@ -84,17 +85,20 @@ h1 {
   margin: 20px 50px;
   padding: 0 20px;
   min-height: 75px;
-  background-color: darkolivegreen;
-  color: white;
+  background-color:#ECECE4;
+  color: #BFBFB8;
   display: flex;
   
   align-items: center;
   justify-content: center;
   font-weight: bold;
+  font-family: sans-serif;
   font-size: 1.5em;
+  letter-spacing: 1.5px;
   text-transform: capitalize;
   flex-wrap: nowrap;
   border-radius: 4px;
+  text-transform: uppercase;
 }
 
 #chartContainer {
