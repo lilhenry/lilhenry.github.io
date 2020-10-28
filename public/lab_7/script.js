@@ -6,7 +6,7 @@ function convertRestaurantsToCategories(restaurantList) {
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
   CanvasJS.addColorSet('customColorSet1', [
-    // add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
+    // done: add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
     '#2B64A9',
     '#B1C0DD',
     '#DAE1F3'
@@ -27,7 +27,26 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
       gridColor: 'rgba(1,77,101,.1)',
       title: 'Change This Title',
       labelFontSize: 12,
-      scaleBreaks: {customBreaks: []} // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
+      scaleBreaks: {customBreaks: [
+        {
+          startValue: 40,
+          endValue: 50,
+          color: "black",
+          type: "waved"
+        },
+        {
+          startValue: 85,
+          endValue: 100,
+          color: "black",
+          type: "waved"
+        },
+        {
+          startValue: 140,
+          endValue: 175,
+          color: "black",
+          type: "waved"
+        }
+      ]} // done: Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
     },
     data: [{
       type: 'bar',
