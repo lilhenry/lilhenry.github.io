@@ -1,5 +1,15 @@
 function convertRestaurantsToCategories(restaurantList) {
-  // process your restaurants here!
+  list = restaurantList.reduce((collection, item, i) => {
+    const findcategory = collection.find((f) => f.label === item.category);
+    if (!findcategory) {
+      collection.push({
+        label: item.category,
+        y: 1
+      });
+    } else {
+      findcategory.y += 1;
+    }
+  }, []);
   return list;
 }
 
@@ -60,9 +70,6 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 function runThisWithResultsFromServer(jsonFromServer) {
   console.log('jsonFromServer', jsonFromServer);
   sessionStorage.setItem('restaurantList', JSON.stringify(jsonFromServer)); // don't mess with this, we need it to provide unit testing support
-  // Process your restaurants list
-  // Make a configuration object for your chart
-  // Instantiate your chart
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
   const chart = new CanvasJS.Chart('chartContainer', options);
