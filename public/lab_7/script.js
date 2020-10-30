@@ -3,8 +3,8 @@ function convertRestaurantsToCategories(restaurantList) {
     const findcategory = collection.find((f) => f.label === item.category);
     if (!findcategory) {
       collection.push({
-        label: item.category,
-        y: 1
+        y: 1,
+        label: item.category
       });
     } else {
       findcategory.y += 1;
@@ -15,7 +15,7 @@ function convertRestaurantsToCategories(restaurantList) {
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
-  CanvasJS.addColorSet('customColorSet1', [
+  CanvasJS.addColorSet('customcolors', [
     // done: add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
     '#2B64A9',
     '#B1C0DD',
@@ -24,9 +24,9 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 
   return {
     animationEnabled: true,
-    colorSet: 'customColorSet1',
+    colorSet: 'customcolors',
     title: {
-      text: 'Change This Title'
+      text: 'Places to eat out in future'
     },
     axisX: {
       interval: 1,
