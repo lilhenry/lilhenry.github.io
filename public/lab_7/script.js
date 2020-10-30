@@ -18,16 +18,16 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
   CanvasJS.addColorSet('customcolors', [
     // done: add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
-    '#2B64A9',
-    '#B1C0DD',
-    '#DAE1F3'
+    '#3B5761',
+    '#598391',
+    '#6DA1B3'
   ]);
 
   return {
     animationEnabled: true,
     colorSet: 'customcolors',
     title: {
-      text: 'Places to eat out in future'
+      text: 'Places To Eat Out In Future'
     },
     axisX: {
       interval: 1,
@@ -36,27 +36,21 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Change This Title',
+      title: 'Restaurants By Category',
       labelFontSize: 12,
       scaleBreaks: {
         customBreaks: [
           {
             startValue: 40,
             endValue: 50,
-            color: 'black',
-            type: 'waved'
           },
           {
             startValue: 85,
             endValue: 100,
-            color: 'black',
-            type: 'waved'
           },
           {
             startValue: 140,
             endValue: 175,
-            color: 'black',
-            type: 'waved'
           }
         ]
       } // done: Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
@@ -73,7 +67,6 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 function runThisWithResultsFromServer(jsonFromServer) {
   console.log('jsonFromServer', jsonFromServer);
   sessionStorage.setItem('restaurantList', JSON.stringify(jsonFromServer)); // don't mess with this, we need it to provide unit testing support
-  console.log('after set item');
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
   const chart = new CanvasJS.Chart('chartContainer', options);

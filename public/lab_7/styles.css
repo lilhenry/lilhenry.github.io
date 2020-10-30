@@ -46,8 +46,8 @@ body {
 }
 
 .flex-outer button {
-  background-color: #C4C4BC;
-  color: #F0F0E9;
+  background-color: #A5A5A5;
+  color: #f1f1f1;
   padding: 6px 12px;
   border: none;
   text-transform: uppercase;
@@ -77,7 +77,7 @@ body {
 .flex-outer {
   width: 960px;
   padding: 0 16px;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 /* New for Lab 7 */
@@ -85,8 +85,8 @@ h1 {
   margin: 20px 50px;
   padding: 0 20px;
   min-height: 75px;
-  background-color:#ECECE4;
-  color: #BFBFB8;
+  background-color:#d7d7d7;
+  color: #404040;
   display: flex;
   
   align-items: center;
@@ -102,7 +102,7 @@ h1 {
 }
 
 #chartContainer {
-    background: gray;
+    background: #A5A5A5;
     border: 2px dotted black;
     border-radius: 4px;
     height: 500px;
