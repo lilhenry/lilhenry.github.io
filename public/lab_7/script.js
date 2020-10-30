@@ -1,5 +1,5 @@
 function convertRestaurantsToCategories(restaurantList) {
-  list = restaurantList.reduce((collection, item, i) => {
+  const list = restaurantList.reduce((collection, item, i) => {
     const findcategory = collection.find((f) => f.label === item.category);
     if (!findcategory) {
       collection.push({
@@ -9,6 +9,7 @@ function convertRestaurantsToCategories(restaurantList) {
     } else {
       findcategory.y += 1;
     }
+    return collection;
   }, []);
   return list;
 }
@@ -68,7 +69,6 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 }
 
 function runThisWithResultsFromServer(jsonFromServer) {
-  console.log('run this with results from server function');
   console.log('jsonFromServer', jsonFromServer);
   sessionStorage.setItem('restaurantList', JSON.stringify(jsonFromServer)); // don't mess with this, we need it to provide unit testing support
   console.log('after set item');
