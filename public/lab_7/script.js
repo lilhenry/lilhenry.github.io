@@ -68,8 +68,10 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
 }
 
 function runThisWithResultsFromServer(jsonFromServer) {
+  console.log('run this with results from server function');
   console.log('jsonFromServer', jsonFromServer);
   sessionStorage.setItem('restaurantList', JSON.stringify(jsonFromServer)); // don't mess with this, we need it to provide unit testing support
+  console.log('after set item');
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
   const chart = new CanvasJS.Chart('chartContainer', options);

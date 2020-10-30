@@ -5,11 +5,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
 
     <!-- 1: link to jquery -->
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 
     <!-- 1: title with your name and Lab 7 in it -->
     <title>Lillian Henry Lab 7</title>
@@ -17,8 +13,10 @@
 <body>
     <div class="wrapper">
         <div class="container flex-outer">
-            <!-- 1: h1 with your name and Lab 7 in it -->
-            <h1>Lillian Henry Lab 7</h1>
+            <div class="header">
+                <!-- 1: h1 with your name and Lab 7 in it -->
+                <h1>Lillian Henry Lab 7</h1>
+            </div>
 
             <!-- 1: target div, id 'chartContainer' -->
             <div id="chartContainer"></div>
@@ -30,22 +28,10 @@
     </div>
 
     <!-- import canvasjs library from canvasjs.min.js -->
-    <script src="canvasjs.min.js" type="text/javascript"></script>
+    <script src="canvasjs.min.js"></script>
 
     <!-- import script.js file -->
-    <script src="script.js" type="text/javascript"></script>
+    <script src="script.js"></script>
 </body>
+<!-- Import your bar chart from https://canvasjs.com/html5-javascript-bar-chart/ -->
 </html>
-<!--
-    - set this up as an HTML page with correct wrapper and container
-    - this is to make sure your chart isn't Huge when it appears
-    - Import your stylesheet in the head
-    - Import your bar chart from https://canvasjs.com/html5-javascript-bar-chart/
-    - Import script.js before your body closing tag
-    - add a div with an id of chartContainer
-
-
-    - TRY THIS: type "doc" at the top of this file and press "tab" for Emmet autocomplete support
--->
-
-
