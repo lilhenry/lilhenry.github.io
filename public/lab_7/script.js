@@ -42,15 +42,15 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
         customBreaks: [
           {
             startValue: 40,
-            endValue: 50,
+            endValue: 50
           },
           {
             startValue: 85,
-            endValue: 100,
+            endValue: 100
           },
           {
             startValue: 140,
-            endValue: 175,
+            endValue: 175
           }
         ]
       } // done: Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
