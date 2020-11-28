@@ -78,6 +78,7 @@ function runThisWithResultsFromServer(jsonFromServer) {
 
 // Leave lines 52-67 alone; do your work in the functions above
 document.body.addEventListener('submit', async (e) => {
+  console.log('submitted');
   e.preventDefault(); // this stops whatever the browser wanted to do itself.
   const form = $(e.target).serializeArray();
   fetch('/sql', {
