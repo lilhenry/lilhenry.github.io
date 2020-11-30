@@ -40,19 +40,6 @@ async function dataFetch() {
   return response.json();
 }
 
-async function insertIntoDB(data) {
-  try {
-    const restaurant_name = data.name;
-    const category = data.category;
-    await db.exec(`INSERT INTO restaurants (restaurant_name, category) VALUES ("${restaurant_name}", "${category}")`);
-    console.log(`${restaurant_name} and ${category} inserted`);
-  }
-  catch (e) {
-    console.log('Error on insertion');
-    console.log(e);
-  }
-}
-
 async function databaseInitialize(dbSettings) {
   try {
     const db = await open(dbSettings);
@@ -62,7 +49,11 @@ async function databaseInitialize(dbSettings) {
       category TEXT)
       `);
     const data = await dataFetch();
-    data.forEach((entry) => { insertIntoDB(entry) });
+    data.forEach((entry) => {
+      const restaurant_name = entry.name;
+      const category = entry.category;
+      db.exec(`INSERT INTO restaurants (restaurant_name, category) VALUES ("${restaurant_name}", "${category}")`); // need await
+    })
     const test = await db.get('SELECT * FROM restaurants');
     console.log('Success');
   }
@@ -70,6 +61,8 @@ async function databaseInitialize(dbSettings) {
     console.log('Error loading Database');
   }
 }
+
+databaseInitialize(dbSettings);
 
 // endpoints
 
@@ -94,7 +87,6 @@ app.route('/sql')
   .post(async (req, res) => {
     console.log('POST request detected');
     console.log('Form data in res.body', req.body);
-    
     const db = await open(dbSettings);
     const output = await query(db);
     res.json(output);
